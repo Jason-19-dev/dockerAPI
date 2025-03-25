@@ -1,0 +1,7 @@
+Flask == 2.0.1
+Flask-SQLAlchemy == 2.5.1
+pydantic
+mysqlclient == 2.2.7
+boto3 
+PyMySQL
+flask-swagger-ui ==4.11.1
