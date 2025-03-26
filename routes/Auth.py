@@ -1,16 +1,13 @@
-# import uuid
-# from main import app
-# from utils.db  import db
-# from flask import request, jsonify, Blueprint
+from . import *
+from controller.Controller import AuthController
 
-# user_route = Blueprint('users',__name__)
 
-# @app.route('/users', methods=['POST'])
-# def crear_usuario():
-#     data = request.json
-#     user_id = str(uuid.uuid4())
-#     nuevo_usuario = db.User(user_id=user_id, nombre=data["nombre"], email=data["email"])
-#     db.session.add(nuevo_usuario)
-#     db.session.commit()
+user_route = Blueprint('auth',__name__)
+
+@user_route.route('/login', methods=['POST'])
+def crear_usuario():
+    data = request.json
+    token = AuthController.generate_token()
     
-    # return jsonify({"user_id": user_id}), 201
+    return jsonify({"token": token}), 201
+

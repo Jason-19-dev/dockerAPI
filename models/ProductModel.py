@@ -1,14 +1,10 @@
 from . import *
-from schemas.schemas import Product
-from pydantic import BaseModel, ConfigDict
-import datetime as dt
-from typing import List
 
 
 class Product(Base):
     __tablename__ = "products"
     
-    id_product = Column(Integer, primary_key=True, autoincrement=True)
+    id_product = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
     description = Column(String)
     price = Column(Float, nullable=False)
@@ -27,15 +23,4 @@ class Product(Base):
             "created_at": self.created_at
         }
     
-        
-        
-class ProductScheme(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-    id_product: int
-    name: str
-    description: str
-    price: float
-    stock: int
-    image_url: str
-    created_at: dt.datetime
     

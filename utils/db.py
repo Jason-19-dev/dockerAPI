@@ -35,7 +35,7 @@ def getSecretManagerDB():
 
 # local databse
 DB_HOST = 'localhost'
-DB_NAME = 'marketplace'
+DB_NAME = 'gamervault'
 DB_USER = 'root'
 DB_PASS = 'root'
 
